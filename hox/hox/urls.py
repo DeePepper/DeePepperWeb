@@ -24,3 +24,5 @@ urlpatterns = [
     path('', DeePepper.views.home, name='home'),
     path('convert', DeePepper.views.convert, name='convert'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

@@ -4,9 +4,6 @@ from .models import FileUpload
 
 # Create your views here.
 
-#def home(request):
-#    return render(request, 'DeePepper/home.html')
-
 def convert(request):
     if request.method == 'POST':
         img = request.FILES["imgfile"]
@@ -14,7 +11,9 @@ def convert(request):
             imgfile=img,
         )
         fileupload.save()
-        return render(request, 'DeePepper/convert.html')
+        return render(request, "DeePepper/convert.html", {
+            "fileupload": fileupload,
+        })
     else:
         return render(request, 'DeePepper/convert.html')
 
