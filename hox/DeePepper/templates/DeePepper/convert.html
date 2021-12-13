@@ -1,18 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 <main>
     <h2 class="pb-2 border-bottom text-center">Results</h2>
 
     <div class="row row-cols-1  justify-content-center row-cols-lg-2 align-items-stretch g-4 py-5">
         <!--Before-->
-      <div class="col text-center" style="height: 500px;">
-        <img src="{{ fileupload.imgfile.url }}" style="height:500px;">
+      <div class="col text-center" style="height: 400px;">
+        <img src="{{ fileupload.imgfile.url }}" style="height:400px;">
         <br>
         <h3> Before </h3>
       </div>
         <!--After-->
-      <div class="col text-center" style="height: 500px;">
-        <img src="{{ fileupload.imgfile.url }}" style="height:500px;">
+      <div class="col text-center" style="height: 400px;">
+        <img src="{% static 'converted.png'%}" style="height:400px;">
         <br>
         <h3> After </h3>
       </div>

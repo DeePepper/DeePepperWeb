@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import FileUploadForm
 from .models import FileUpload
+import time
 
 # Create your views here.
 
@@ -11,6 +12,7 @@ def convert(request):
             imgfile=img,
         )
         fileupload.save()
+        #time.sleep(10)
         return render(request, "DeePepper/convert.html", {
             "fileupload": fileupload,
         })
